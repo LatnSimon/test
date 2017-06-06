@@ -1,0 +1,364 @@
+main() {
+    load_scene("start_animation")
+    load_scene("lobby");
+    load_scene("game_scene1");
+    load_scene("game_scene2");
+    load_scene("game_scene3");
+    load_scene("game_menu");
+    load_scene("game_Winning");
+
+    register_button();
+
+    show_scene("start_animation");
+    show_scene("lobby");
+
+
+    var state = 0;
+
+    while (1) {
+
+        switch (state){
+
+			case 0;
+				wait(1);
+				break;
+
+			case 1:
+				scene1_main(new_file);
+				break;
+
+			case 2:
+				scene1_main(old_file);
+				break;
+		}
+    }
+
+}
+
+function scene1_main() {
+
+    show_scene("game_scene1");
+    scene1_init();
+
+    tutorial_animation();
+
+    var scene1_state = 0;
+
+    while (1) {
+
+        switch (scene1_state) {
+
+			case 0:
+				wait(1);
+				break;
+
+			case 1:
+
+				break;
+        }
+    }
+}
+
+
+var year=0;
+var month=1;
+var week=1;
+
+var money=5000;
+
+
+function register_button() {
+
+    on_touch_up("start_new", "change_state(start_new);");
+    on_touch_up("start_load", "change_state(start_load);");
+
+    on_touch_up("menu", "menu();");
+
+    on_touch_up("menu_開發", "menu_act(0);");
+    on_touch_up("menu_員工", "menu_act(1);");
+    on_touch_up("menu_行動", "menu_act(2);");
+    on_touch_up("menu_資訊", "menu_act(3);");
+    on_touch_up("menu_系統", "menu_act(4);");
+
+    on_touch_up("menu_開發_新企畫", "menu_act_detail(0,0);");
+    on_touch_up("menu_開發_開發委託", "menu_act_detail(0,1);");
+    on_touch_up("menu_開發_開發續作", "menu_act_detail(0,2);");
+    on_touch_up("menu_開發_開發主機", "menu_act_detail(0,3);");
+
+    on_touch_up("menu_員工_培育", "menu_act_detail(1,0);");
+    on_touch_up("menu_員工_升級", "menu_act_detail(1,1);");
+    on_touch_up("menu_員工_雇用", "menu_act_detail(1,2);");
+    on_touch_up("menu_員工_開除", "menu_act_detail(1,3);");
+
+    on_touch_up("menu_行動_宣傳廣告", "menu_act_detail(2,0);");
+    on_touch_up("menu_行動_使用道具", "menu_act_detail(2,1);");
+    on_touch_up("menu_行動_換座位", "menu_act_detail(2,2);");
+
+    on_touch_up("menu_資訊_過去產品", "menu_act_detail(3,0);");
+    on_touch_up("menu_資訊_員工一覽", "menu_act_detail(3,1);");
+    on_touch_up("menu_資訊_市場調查", "menu_act_detail(3,2);");
+    on_touch_up("menu_資訊_獲得獎杯", "menu_act_detail(3,3);");
+
+    on_touch_up("menu_系統_儲存", "menu_act_detail(4,0);");
+    on_touch_up("menu_系統_變更設定", "menu_act_detail(4,1);");
+    on_touch_up("menu_系統_遊戲方式", "menu_act_detail(4,2);");
+    on_touch_up("menu_系統_最高紀錄", "menu_act_detail(4,3);");
+    on_touch_up("menu_系統_結束遊戲", "menu_act_detail(4,4);");
+
+}
+
+function change_state_index(index) {
+
+
+
+    state_index=index;
+
+}
+
+function scene1_init() {
+
+    //controll object visible when scene1 Initialize
+}
+
+function tutorial_animation() {
+
+    //tutorial message
+}
+
+function menu() {
+
+    show("menu_開發");
+    show("menu_員工");
+    show("menu_行動");
+    show("menu_資訊");
+    show("menu_系統");
+}
+
+function menu_act(index) {
+
+    switch (index1) {
+
+    case 0:
+        show("menu_開發_新企畫");
+        show("menu_開發_開發委託");
+        show("menu_開發_開發續作");
+        show("menu_開發_開發主機");
+        break;
+
+    case 1:
+        show("menu_員工_培育");
+        show("menu_員工_升級");
+        show("menu_員工_雇用");
+        show("menu_員工_開除");
+        break;
+
+    case 2:
+        show("menu_行動_宣傳廣告");
+        show("menu_行動_使用道具");
+        show("menu_行動_換座位");
+        break;
+
+    case 3:
+        show("menu_資訊_過去產品");
+        show("menu_資訊_員工一覽");
+        show("menu_資訊_市場調查");
+        show("menu_資訊_獲得獎杯");
+        break;
+
+    case 4:
+        show("menu_系統_儲存");
+        show("menu_系統_變更設定");
+        show("menu_系統_遊戲方式");
+        show("menu_系統_最高紀錄");
+        show("menu_系統_結束遊戲");
+        break;
+    }
+
+}
+
+function menu_act_detail(index1,index2) {
+
+    switch (index) {
+
+		case 0:
+			switch (index2) {
+
+				case 0:
+					
+					break;
+
+				case 1:
+
+					break;
+
+				case 2:
+
+					break;
+
+				case 3:
+
+					break;
+
+				case 4:
+
+					break;
+			}
+			break;
+
+		case 1:
+			switch (index2) {
+
+				case 0:
+
+					break;
+
+				case 1:
+
+					break;
+
+				case 2:
+
+					break;
+
+				case 3:
+
+					break;
+
+				case 4:
+
+					break;
+			}
+			break;
+
+		case 2:
+			switch (index2) {
+
+				case 0:
+
+					break;
+
+				case 1:
+
+					break;
+
+				case 2:
+
+					break;
+
+				case 3:
+
+					break;
+
+				case 4:
+
+					break;
+			}
+			break;
+			
+		case 3:
+		   switch (index2) {
+
+				case 0:
+
+					break;
+
+				case 1:
+
+					break;
+
+				case 2:
+
+					break;
+
+				case 3:
+
+					break;
+
+				case 4:
+
+					break;
+			}
+			break;
+
+		case 4:
+			switch (index2) {
+
+				case 0:
+
+					break;
+
+				case 1:
+
+					break;
+
+				case 2:
+
+					break;
+
+				case 3:
+
+					break;
+
+				case 4:
+
+					break;
+			}
+			break;
+		}
+    }
+}
+
+function scene1_timer() {
+
+    aTimer = new System.Timers.Timer(2000);
+}
+
+
+enum job {
+    Programmer = 0;
+    ScriptWriter = 1;
+    GraphicDesigner = 2;
+    SoundDesigner = 3;
+    Director = 4;
+    Producer = 5;
+    HardwareEngineer = 6;
+    Hack = 7;
+}
+
+class member {
+    string name;
+    int salary;
+    int job;
+    int jobLevel;
+    int hpMax;
+    int hp;
+
+    int program;
+    int script;
+    int graphic;
+    int sound;
+
+    member(recruitIndex) {
+
+        name=nameList[random(0,200)];
+        salary=random(recruitIndex*100,recruitIndex*500);
+
+        if (recruitIndex>5) {
+            job=random(0,7);
+            jobLevel=random(0,5);
+            hpMax=random(6,10);
+        }
+        else {
+            job=random(0,5);
+            jobLevel=random(0,3);
+            hpMax=random(0,7);
+        }
+        program=random(recruitIndex*100,recruitIndex*500);
+        script=random(recruitIndex*100,recruitIndex*500);
+        graphic=random(recruitIndex*100,recruitIndex*500);
+        sound=random(recruitIndex*100,recruitIndex*500);
+    }
+
+
+
+}
